@@ -7,30 +7,33 @@ document.getElementById("login").addEventListener("click", function (e) {
     let passwordError = document.getElementById("passwordError");
 
     // Reset error messages
-    nameError.textContent = "";
-    passwordError.textContent = "";
+    [nameError, passwordError].forEach(err => {
+        err.textContent = "";
+        err.style.color = "red";
+    });
 
     if (!usernameInput) {
-        nameError.style.color ="red"
         nameError.textContent = "Enter your name";
         return;
     }
 
     if (!passwordInput) {
-        passwordError.style.color ="red"
         passwordError.textContent = "Enter your password";
         return;
     }
 
-    // Hardcoded valid credentials
-    let validUser = "Clement";
-    let validPass = "123456";
+    // Hardcoded valid credentials (for practice only)
+    const validCredentials = {
+        username: "Clement",
+        password: "123456"
+    };
 
-    if (usernameInput === validUser && passwordInput === validPass) {
+    if (usernameInput === validCredentials.username && passwordInput === validCredentials.password) {
         localStorage.setItem("username", usernameInput);
         localStorage.setItem("isLoggedIn", "true");
         window.location.href = "index.html"; // Redirect to dashboard
     } else {
-        passwordError.textContent = "Invalid username or password";
+        let errorBox = document.getElementById("errorMessage") || passwordError;
+        errorBox.textContent = "Invalid username or password";
     }
 });
