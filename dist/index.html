@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Message app</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/Screenshot_from_2025-03-17_09-12-31-removebg-preview.png" type="image/x-icon">
 
 </head>
 <body class="bg-zinc-900 justify-center">
@@ -350,10 +351,20 @@
 
     <script>
 
-      let logout = document.getElementById("logout").addEventListener('click', () =>{
-        alert ('Are you sure you want to log out?')
-        window.location.href ="log-in.html"
-      })
+        let logoutButton = document.getElementById("logout");
+
+        if (logoutButton) {
+            logoutButton.addEventListener("click", () => {
+                let confirmLogout = confirm("Are you sure you want to log out?");
+            
+                if (confirmLogout) {
+                    localStorage.clear();
+                    window.location.href = "log-in.html"; // Redirects to login page
+                }
+            });
+        }
+
+
 
 
 

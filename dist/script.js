@@ -1,39 +1,67 @@
-document.getElementById("login").addEventListener("click", function (e) {
-    e.preventDefault();
+document.getElementById("showLogin").addEventListener("click",  ()=> {
+    document.getElementById("signupForm").classList.add("hidden");
+    document.getElementById("loginForm").classList.remove("hidden");
+});
 
-    let usernameInput = document.getElementById("nameField").value.trim();
-    let passwordInput = document.getElementById("passwordField").value.trim();
-    let nameError = document.getElementById("nameError");
-    let passwordError = document.getElementById("passwordError");
+document.getElementById("showSignup").addEventListener("click",  () =>{
+    document.getElementById("loginForm").classList.add("hidden");
+    document.getElementById("signupForm").classList.remove("hidden");
+});
 
-    // Reset error messages
-    [nameError, passwordError].forEach(err => {
-        err.textContent = "";
-        err.style.color = "red";
-    });
+// sign up 
+document.getElementById("signupBtn").addEventListener("click",  () =>{
+    let name = document.getElementById("signupName").value.trim();
+    let password = document.getElementById("signupPassword").value.trim();
+    let nameError = document.getElementById("signupNameError");
+    let passwordError = document.getElementById("signupPasswordError");
 
-    if (!usernameInput) {
+    nameError.textContent = "";
+    passwordError.textContent = "";
+
+    if (!name) {
         nameError.textContent = "Enter your name";
         return;
     }
-
-    if (!passwordInput) {
+    if (!password) {
         passwordError.textContent = "Enter your password";
         return;
     }
 
-    // Hardcoded valid credentials (for practice only)
-    const validCredentials = {
-        username: "Clement",
-        password: "123456"
-    };
+    localStorage.setItem("username", name);
+    localStorage.setItem("password", password);
 
-    if (usernameInput === validCredentials.username && passwordInput === validCredentials.password) {
-        localStorage.setItem("username", usernameInput);
+    alert("Signup successful! You can now log in.");
+    document.getElementById("signupForm").classList.add("hidden");
+    document.getElementById("loginForm").classList.remove("hidden");
+});
+
+// log in 
+document.getElementById("loginBtn").addEventListener("click", function () {
+    let name = document.getElementById("loginName").value.trim();
+    let password = document.getElementById("loginPassword").value.trim();
+    let nameError = document.getElementById("loginNameError");
+    let passwordError = document.getElementById("loginPasswordError");
+
+    nameError.textContent = "";
+    passwordError.textContent = "";
+
+    if (!name) {
+        nameError.textContent = "Enter your name";
+        return;
+    }
+    if (!password) {
+        passwordError.textContent = "Enter your password";
+        return;
+    }
+
+    let storedName = localStorage.getItem("username");
+    let storedPassword = localStorage.getItem("password");
+
+    if (name === storedName && password === storedPassword) {
         localStorage.setItem("isLoggedIn", "true");
-        window.location.href = "index.html"; // Redirect to dashboard
+        alert 
+        window.location.href = "index.html";
     } else {
-        let errorBox = document.getElementById("errorMessage") || passwordError;
-        errorBox.textContent = "Invalid username or password";
+        passwordError.textContent = "Invalid username or password";
     }
 });

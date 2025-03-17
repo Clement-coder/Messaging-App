@@ -5,29 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOG in</title>
     <link rel="stylesheet" href="style.css">
-    <style>
+    <link rel="shortcut icon" href="/Screenshot_from_2025-03-17_09-12-31-removebg-preview.png" type="image/x-icon">
+
+    <!-- <style>
         .hide {
              display: none;
              }
         .show { 
             display: block; }
-    </style>
+    </style> -->
 </head>
 <body>
         
-        <div class="mt-[100px] justify-items-center items-center text-center">
-            <form id="form" class="gap-10">
-                <h1>Register Now !!</h1>
-                <p id="nameError" class="text-white"></p>
-                <input id="nameField" class="border h-10 pl-4 rounded-xl border-gray-500 w-86" type="text" placeholder="Enter Name">
-                
-                <p id="passwordError" class="text-white"></p>
-                <input id="passwordField" class="border mt-2 h-10 pl-4 rounded-xl border-gray-500 w-86" type="password" placeholder="Enter Password">
-                
-                <button id="login" type="submit" class="mt-2 text-md font-bold border border-gray-500 rounded-xl px-4 py-2">Log In</button>
-            </form>
+     <div class="flex items-center justify-center h-screen bg-gray-100">  
+
+    <div class="w-96 p-6 bg-white shadow-md rounded-lg h-[400px]">
+        <!-- sign up pag-->
+        <div id="signupForm">
+            <h2 class="text-2xl font-bold mb-4 text-center">Sign Up</h2>
+            <input type="text" id="signupName" class="w-full p-2 mb-2 border rounded-md border-gray-500  " placeholder="Enter Name">
+            <span id="signupNameError" class="text-red-500 text-sm"></span>
+            <input type="password" id="signupPassword" class="w-full p-2 mt-2 mb-2 border border-gray-500 rounded-md" placeholder="Enter Password">
+            <span id="signupPasswordError" class="text-red-500 text-sm"></span>
+            <button id="signupBtn" class="w-full bg-blue-500 text-white p-2 rounded-xl mt-3 hover:bg-blue-600 animate-pulse">Sign Up</button>
+            <p class="text-sm mt-20 text-center">Already have an account? 
+                <a href="#" id="showLogin" class="text-blue-500">Login</a>
+            </p>
+        </div>
+
+        <!-- log in page -->
+        <div id="loginForm" class="hidden">
+            <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
+            <input type="text" id="loginName" class="w-full p-2 mb-2 border rounded-md" placeholder="Enter Name">
+            <span id="loginNameError" class="text-red-500 text-sm"></span>
+            <input type="password" id="loginPassword" class="w-full p-2 mt-2 mb-2 border rounded-md" placeholder="Enter Password">
+            <span id="loginPasswordError" class="text-red-500 text-sm"></span>
+            <button id="loginBtn" class="w-full bg-green-500 text-white p-2 rounded-xl mt-3 hover:bg-green-600 animate-pulse">Login</button>
+            <p class="text-sm mt-20 text-center">Don't have an account? 
+                <a href="#" id="showSignup" class="text-blue-500">Sign Up</a>
+            </p>
         </div>
     </div>
+     </div>
 
     <script src="/dist/script.js"></script>
 </body>
