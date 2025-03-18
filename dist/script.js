@@ -22,9 +22,13 @@ document.getElementById("signupBtn").addEventListener("click",  () =>{
         nameError.textContent = "Enter your name";
         return;
     }
-    if (!password) {
+    if (!password ) {
         passwordError.textContent = "Enter your password";
         return;
+    }
+    if (password.length < 5) {
+        passwordError.textContent = "Password must be at least 5 characters ";
+        return
     }
 
     localStorage.setItem("username", name);
@@ -52,6 +56,9 @@ document.getElementById("loginBtn").addEventListener("click", function () {
     if (!password) {
         passwordError.textContent = "Enter your password";
         return;
+    }if (password.length < 5) {
+        passwordError.textContent = "Password must be at least 4 characters long";
+        return
     }
 
     let storedName = localStorage.getItem("username");
@@ -59,7 +66,7 @@ document.getElementById("loginBtn").addEventListener("click", function () {
 
     if (name === storedName && password === storedPassword) {
         localStorage.setItem("isLoggedIn", "true");
-        alert 
+        alert (`Welcome back my gee ${name} `)
         window.location.href = "index.html";
     } else {
         passwordError.textContent = "Invalid username or password";

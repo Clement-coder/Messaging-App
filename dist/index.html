@@ -6,6 +6,7 @@
     <title>Message app</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="/Screenshot_from_2025-03-17_09-12-31-removebg-preview.png" type="image/x-icon">
+    
 
 </head>
 <body class="bg-zinc-900 justify-center">
@@ -351,18 +352,9 @@
 
     <script>
 
-        let logoutButton = document.getElementById("logout");
-
-        if (logoutButton) {
-            logoutButton.addEventListener("click", () => {
-                let confirmLogout = confirm("Are you sure you want to log out?");
-            
-                if (confirmLogout) {
-                    localStorage.clear();
-                    window.location.href = "log-in.html"; // Redirects to login page
-                }
-            });
-        }
+document.getElementById("logout")?.addEventListener("click", () => 
+    confirm("Are you sure you want to log out?") && (localStorage.clear(), window.location.href = "log-in.html")
+);
 
 
 
