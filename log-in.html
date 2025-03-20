@@ -23,12 +23,18 @@
         <!-- sign up pag-->
         <div id="signupForm" class="transition-all ease-in-out duration-500">
             <h2 class="text-2xl font-bold mb-4 text-center animate-bounce">Sign Up</h2>
+
             <input type="text" id="signupName" class="w-full p-2 mb-2 border rounded-xl border-gray-500  " placeholder="Enter Name">
             <span id="signupNameError" class="text-red-500 text-sm"></span>
+
             <input type="password" id="signupPassword" class="w-full p-2 mt-2 mb-2 border border-gray-500 rounded-xl" placeholder="Enter Password">
             <span id="signupPasswordError" class="text-red-500 text-sm"></span>
+
+            <input type="email" required  id="signupEmail" class="w-full p-2 mt-2 mb-2 border border-gray-500 rounded-xl valid:border-dashed valid:border-green-600" placeholder="Email Adress">
+            <span id="signupEmailError" class="text-red-500 text-sm"></span>
+            
             <button id="signupBtn" class="w-full bg-blue-500 text-white p-2 rounded-2xl mt-3 hover:bg-blue-600 animate-pulse">Sign Up</button>
-            <p class="text-sm mt-20 text-center">
+            <p class="text-sm mt-10 text-center">
                 Already have an account? 
                 <a href="#" id="showLogin" class="text-blue-500">Login</a>
             </p>
@@ -37,12 +43,18 @@
         <!-- log in page -->
         <div id="loginForm" class="hidden transition-all ease-in-out duration-500">
             <h2 class="text-2xl font-bold mb-4 text-center animate-bounce">Login</h2>
+
             <input type="text" id="loginName" class="w-full p-2 mb-2 border  border-gray-500 rounded-xl" placeholder="Enter Name">
             <span id="loginNameError" class="text-red-500 text-sm"></span>
+
             <input type="password" id="loginPassword" class="w-full p-2 mt-2 mb-2 border  rounded-xl" placeholder="Enter Password">
             <span id="loginPasswordError" class="text-red-500 text-sm"></span>
+
+            <input type="email" id="loginEmail" class="w-full p-2 mt-2 mb-2 border  rounded-xl" placeholder="Enter Email">
+            <span id="loginEmailError" class="text-red-500 text-sm"></span>
+
             <button id="loginBtn" class="w-full bg-green-500 text-white p-2 rounded-2xl mt-3 hover:bg-green-600 animate-pulse">Login</button>
-            <p class="text-sm mt-20 text-center">
+            <p class="text-sm mt-10 text-center">
                 Don't have an account? 
                 <a href="#" id="showSignup" class="text-blue-500">Sign Up</a>
             </p>

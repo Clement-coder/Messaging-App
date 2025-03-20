@@ -29,7 +29,7 @@
         <!-- profile and chat list -->
       <div class="sm:max-w-sm md:max-w-md lg:max-w-xl border-r border-zinc-700">
         <div class="flex ml-4 items-center justify-between p-5 gap-[250px]">
-            <h1 class="text-white text-2xl font-bold ">Chats</h1>
+            <h1 class="text-white text-xl font-bold "><span id="username"></span></h1>
             <div class="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="gray"><path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></svg>
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="gray"><path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"/></svg>
@@ -49,26 +49,16 @@
         </div>
         <!-- NewKing chats -->
         <div class="h-[550px] overflow-y-auto scrollbar-hide">
-            <div>
-                <a href="">
-                    <div class="flex gap-4 items-center p-4 border-t border-zinc-700 hover:bg-zinc-800 transition-all ease-in-out duration-300">
-                        <img class="w-14 rounded-full" src="https://scontent-los2-1.xx.fbcdn.net/v/t39.30808-1/478399979_555014514232885_365921934383569857_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=105&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeFo8Jkl6mQXsMslUoo5XdFvjowPdo3yBYqOjA92jfIFikgYXv-Oh_F-GPMX9O0FO3uZMUd65DxPvnBN52wNMPx0&_nc_ohc=jqMM17Jl_B4Q7kNvgFr2PBv&_nc_oc=AdiFFMXljC1pAWgdZxInEjYz2jl-aaOItdwHCjlu0l4APhxeyVOncNqQ-CEQG7YbgHJQQKUsBecMoTVUvGWLab3R&_nc_zt=24&_nc_ht=scontent-los2-1.xx&_nc_gid=Azvvm_ILA-JE3boTYh7kKJM&oh=00_AYH3dtSObx7XjZqLynCsSlQLmlVcQYGclInPrdT4r39Hfw&oe=67D6E09B" alt="">
-                        <div>
-                            <p class="font-medium lg:text-md sm:text-sm md:text-md  text-gray-200">NewKing Audu</p>
-                        <p class="text-gray-500 font-light text-sm">Afa Clement Ahbeg share code </p>
-                        </div>
-                        <div class="text-right relative left-6 text-green-900 font-semibold text-sm">
-                            <p>5:46 AM</p>
-                            <button class=" px-2 text-zinc-900 rounded-full bg-green-900">1</button>
-                        </div>
-                    </div>
-                </a>
+            <div >
+               
+                  
+               
             </div>
     
             <!-- messages -->
-            <div class="lg:block sm:hidden md:block">
-                <a href="">
-                    <div class="flex gap-4 items-center p-4 border-t border-zinc-700 hover:bg-zinc-800 transition-all ease-in-out duration-300">
+            <div id="friendsList" class="lg:block sm:hidden md:block">
+          
+                    <div class="flex gap-4 items-center cursor-pointer p-4 border-t border-zinc-700 hover:bg-zinc-800 transition-all ease-in-out duration-300">
                         <img class="w-14 rounded-full" src="https://scontent-los2-1.xx.fbcdn.net/v/t39.30808-1/478399979_555014514232885_365921934383569857_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=105&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeFo8Jkl6mQXsMslUoo5XdFvjowPdo3yBYqOjA92jfIFikgYXv-Oh_F-GPMX9O0FO3uZMUd65DxPvnBN52wNMPx0&_nc_ohc=jqMM17Jl_B4Q7kNvgFr2PBv&_nc_oc=AdiFFMXljC1pAWgdZxInEjYz2jl-aaOItdwHCjlu0l4APhxeyVOncNqQ-CEQG7YbgHJQQKUsBecMoTVUvGWLab3R&_nc_zt=24&_nc_ht=scontent-los2-1.xx&_nc_gid=Azvvm_ILA-JE3boTYh7kKJM&oh=00_AYH3dtSObx7XjZqLynCsSlQLmlVcQYGclInPrdT4r39Hfw&oe=67D6E09B" alt="">
                         <div>
                             <p class="font-medium lg:text-md sm:text-sm md:text-md  text-gray-300">Function Kristen{}</p>
@@ -79,98 +69,9 @@
                             <button class=" px-2 text-zinc-900 rounded-full bg-green-900">1</button>
                         </div>
                     </div>
-                </a>
+        
             </div>
-            <div>
-                <a href="">
-                    <div class="flex gap-4 items-center p-4 border-t border-zinc-700 hover:bg-zinc-800 transition-all ease-in-out duration-300">
-                        <img class="w-14 rounded-full" src="https://scontent-los2-1.xx.fbcdn.net/v/t39.30808-1/478399979_555014514232885_365921934383569857_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=105&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeFo8Jkl6mQXsMslUoo5XdFvjowPdo3yBYqOjA92jfIFikgYXv-Oh_F-GPMX9O0FO3uZMUd65DxPvnBN52wNMPx0&_nc_ohc=jqMM17Jl_B4Q7kNvgFr2PBv&_nc_oc=AdiFFMXljC1pAWgdZxInEjYz2jl-aaOItdwHCjlu0l4APhxeyVOncNqQ-CEQG7YbgHJQQKUsBecMoTVUvGWLab3R&_nc_zt=24&_nc_ht=scontent-los2-1.xx&_nc_gid=Azvvm_ILA-JE3boTYh7kKJM&oh=00_AYH3dtSObx7XjZqLynCsSlQLmlVcQYGclInPrdT4r39Hfw&oe=67D6E09B" alt="">
-                        <div>
-                            <p class="font-medium lg:text-md sm:text-sm md:text-md  text-gray-300">AccuRacy</p>
-                        <p class="text-gray-500 font-light text-sm">Afa Clement Ahbeg share code </p>
-                        </div>
-                        <div class="text-right relative left-6 text-green-900 font-semibold text-sm">
-                            <p>5:46 AM</p>
-                            <button class=" px-2 text-zinc-900 rounded-full bg-green-900">1</button>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div>
-                <a href="">
-                    <div class="flex gap-4 items-center p-4 border-t border-zinc-700 hover:bg-zinc-800 transition-all ease-in-out duration-300">
-                        <img class="w-14 rounded-full" src="https://scontent-los2-1.xx.fbcdn.net/v/t39.30808-1/478399979_555014514232885_365921934383569857_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=105&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeFo8Jkl6mQXsMslUoo5XdFvjowPdo3yBYqOjA92jfIFikgYXv-Oh_F-GPMX9O0FO3uZMUd65DxPvnBN52wNMPx0&_nc_ohc=jqMM17Jl_B4Q7kNvgFr2PBv&_nc_oc=AdiFFMXljC1pAWgdZxInEjYz2jl-aaOItdwHCjlu0l4APhxeyVOncNqQ-CEQG7YbgHJQQKUsBecMoTVUvGWLab3R&_nc_zt=24&_nc_ht=scontent-los2-1.xx&_nc_gid=Azvvm_ILA-JE3boTYh7kKJM&oh=00_AYH3dtSObx7XjZqLynCsSlQLmlVcQYGclInPrdT4r39Hfw&oe=67D6E09B" alt="">
-                        <div>
-                            <p class="font-medium lg:text-md sm:text-sm md:text-md  text-gray-300">Teyei </p>
-                        <p class="text-gray-500 font-light text-sm">Afa Clement Ahbeg share code </p>
-                        </div>
-                        <div class="text-right relative left-6 text-green-900 font-semibold text-sm">
-                            <p>5:46 AM</p>
-                            <button class=" px-2 text-zinc-900 rounded-full bg-green-900">1</button>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div>
-                <a href="">
-                    <div class="flex gap-4 items-center p-4 border-t border-zinc-700 hover:bg-zinc-800 transition-all ease-in-out duration-300">
-                        <img class="w-14 rounded-full" src="https://scontent-los2-1.xx.fbcdn.net/v/t39.30808-1/478399979_555014514232885_365921934383569857_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=105&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeFo8Jkl6mQXsMslUoo5XdFvjowPdo3yBYqOjA92jfIFikgYXv-Oh_F-GPMX9O0FO3uZMUd65DxPvnBN52wNMPx0&_nc_ohc=jqMM17Jl_B4Q7kNvgFr2PBv&_nc_oc=AdiFFMXljC1pAWgdZxInEjYz2jl-aaOItdwHCjlu0l4APhxeyVOncNqQ-CEQG7YbgHJQQKUsBecMoTVUvGWLab3R&_nc_zt=24&_nc_ht=scontent-los2-1.xx&_nc_gid=Azvvm_ILA-JE3boTYh7kKJM&oh=00_AYH3dtSObx7XjZqLynCsSlQLmlVcQYGclInPrdT4r39Hfw&oe=67D6E09B" alt="">
-                        <div>
-                            <p class="font-medium lg:text-md sm:text-sm md:text-md  text-gray-300">Chinemerem</p>
-                        <p class="text-gray-500 font-light text-sm">Afa Clement Ahbeg share code </p>
-                        </div>
-                        <div class="text-right relative left-6 text-green-900 font-semibold text-sm">
-                            <p>5:46 AM</p>
-                            <button class=" px-2 text-zinc-900 rounded-full bg-green-900">1</button>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div>
-                <a href="">
-                    <div class="flex gap-4 items-center p-4 border-t border-zinc-700 hover:bg-zinc-800 transition-all ease-in-out duration-300">
-                        <img class="w-14 rounded-full" src="https://scontent-los2-1.xx.fbcdn.net/v/t39.30808-1/478399979_555014514232885_365921934383569857_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=105&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeFo8Jkl6mQXsMslUoo5XdFvjowPdo3yBYqOjA92jfIFikgYXv-Oh_F-GPMX9O0FO3uZMUd65DxPvnBN52wNMPx0&_nc_ohc=jqMM17Jl_B4Q7kNvgFr2PBv&_nc_oc=AdiFFMXljC1pAWgdZxInEjYz2jl-aaOItdwHCjlu0l4APhxeyVOncNqQ-CEQG7YbgHJQQKUsBecMoTVUvGWLab3R&_nc_zt=24&_nc_ht=scontent-los2-1.xx&_nc_gid=Azvvm_ILA-JE3boTYh7kKJM&oh=00_AYH3dtSObx7XjZqLynCsSlQLmlVcQYGclInPrdT4r39Hfw&oe=67D6E09B" alt="">
-                        <div>
-                            <p class="font-medium lg:text-md sm:text-sm md:text-md  text-gray-300">Promise Obi</p>
-                        <p class="text-gray-500 font-light text-sm">Afa Clement Ahbeg share code </p>
-                        </div>
-                        <div class="text-right relative left-6 text-green-900 font-semibold text-sm">
-                            <p>5:46 AM</p>
-                            <button class=" px-2 text-zinc-900 rounded-full bg-green-900">1</button>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div>
-                <a href="">
-                    <div class="flex gap-4 items-center p-4 border-t border-zinc-700 hover:bg-zinc-800 transition-all ease-in-out duration-300">
-                        <img class="w-14 rounded-full" src="https://scontent-los2-1.xx.fbcdn.net/v/t39.30808-1/478399979_555014514232885_365921934383569857_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=105&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeFo8Jkl6mQXsMslUoo5XdFvjowPdo3yBYqOjA92jfIFikgYXv-Oh_F-GPMX9O0FO3uZMUd65DxPvnBN52wNMPx0&_nc_ohc=jqMM17Jl_B4Q7kNvgFr2PBv&_nc_oc=AdiFFMXljC1pAWgdZxInEjYz2jl-aaOItdwHCjlu0l4APhxeyVOncNqQ-CEQG7YbgHJQQKUsBecMoTVUvGWLab3R&_nc_zt=24&_nc_ht=scontent-los2-1.xx&_nc_gid=Azvvm_ILA-JE3boTYh7kKJM&oh=00_AYH3dtSObx7XjZqLynCsSlQLmlVcQYGclInPrdT4r39Hfw&oe=67D6E09B" alt="">
-                        <div>
-                            <p class="font-medium lg:text-md sm:text-sm md:text-md  text-gray-300">Charles Shaar</p>
-                        <p class="text-gray-500 font-light text-sm">Afa Clement Ahbeg share code </p>
-                        </div>
-                        <div class="text-right relative left-6 text-green-900 font-semibold text-sm">
-                            <p>5:46 AM</p>
-                            <button class=" px-2 text-zinc-900 rounded-full bg-green-900">1</button>
-                        </div>
-                    </div>
-                </a>
-            </div>
-              <div>
-                <a href="">
-                    <div class="flex gap-4 items-center p-4 border-t border-zinc-700 hover:bg-zinc-800 transition-all ease-in-out duration-300">
-                        <img class="w-14 rounded-full" src="https://scontent-los2-1.xx.fbcdn.net/v/t39.30808-1/478399979_555014514232885_365921934383569857_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=105&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeFo8Jkl6mQXsMslUoo5XdFvjowPdo3yBYqOjA92jfIFikgYXv-Oh_F-GPMX9O0FO3uZMUd65DxPvnBN52wNMPx0&_nc_ohc=jqMM17Jl_B4Q7kNvgFr2PBv&_nc_oc=AdiFFMXljC1pAWgdZxInEjYz2jl-aaOItdwHCjlu0l4APhxeyVOncNqQ-CEQG7YbgHJQQKUsBecMoTVUvGWLab3R&_nc_zt=24&_nc_ht=scontent-los2-1.xx&_nc_gid=Azvvm_ILA-JE3boTYh7kKJM&oh=00_AYH3dtSObx7XjZqLynCsSlQLmlVcQYGclInPrdT4r39Hfw&oe=67D6E09B" alt="">
-                        <div>
-                            <p class="font-medium lg:text-md sm:text-sm md:text-md  text-gray-300">Temi</p>
-                        <p class="text-gray-500 font-light text-sm">Afa Clement Ahbeg share code </p>
-                        </div>
-                        <div class="text-right relative left-6 text-green-900 font-semibold text-sm">
-                            <p>5:46 AM</p>
-                            <button class=" px-2 text-zinc-900 rounded-full bg-green-900">1</button>
-                        </div>
-                    </div>
-                </a>
-            </div>
+
             
         </div>
 
@@ -350,16 +251,6 @@
 
 
 
-    <script>
-
-document.getElementById("logout")?.addEventListener("click", () => 
-    confirm("Are you sure you want to log out?") && (localStorage.clear(), window.location.href = "log-in.html")
-);
-
-
-
-
-
-    </script>
+    <script src="indexx.js"></script>
 </body>
 </html>
