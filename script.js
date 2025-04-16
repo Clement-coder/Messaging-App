@@ -1,11 +1,16 @@
+// Toggle between login and signup forms
 document.getElementById("showLogin").addEventListener("click", () => {
     document.getElementById("signupForm").classList.add("hidden");
     document.getElementById("loginForm").classList.remove("hidden");
+    document.getElementById("titleChange").textContent = "Message App || Log In";
+
 });
 
 document.getElementById("showSignup").addEventListener("click", () => {
     document.getElementById("loginForm").classList.add("hidden");
     document.getElementById("signupForm").classList.remove("hidden");
+    document.getElementById("titleChange").textContent = "Message App || Sign Up";
+
 });
 
 // Retrieve stored users from localStorage
@@ -27,10 +32,12 @@ document.getElementById("signupBtn").addEventListener("click", () => {
     let passwordError = document.getElementById("signupPasswordError");
     let emailError = document.getElementById("signupEmailError");
 
+    // Clear previous error messages
     nameError.textContent = "";
     passwordError.textContent = "";
     emailError.textContent = "";
 
+    // Input validation
     if (!name) {
         nameError.textContent = "Enter your name";
         return;
@@ -56,6 +63,7 @@ document.getElementById("signupBtn").addEventListener("click", () => {
         return;
     }
 
+    // Save the new user to localStorage
     users.push({ username: name, password, email });
     saveUsers(users);
 
@@ -64,21 +72,19 @@ document.getElementById("signupBtn").addEventListener("click", () => {
     document.getElementById("loginForm").classList.remove("hidden");
 });
 
-// Log in function
 document.getElementById("loginBtn").addEventListener("click", () => {
-    let name = document.getElementById("loginName").value.trim();
     let password = document.getElementById("loginPassword").value.trim();
     let email = document.getElementById("loginEmail").value.trim();
-    let nameError = document.getElementById("loginNameError");
     let passwordError = document.getElementById("loginPasswordError");
     let emailError = document.getElementById("loginEmailError");
 
-    nameError.textContent = "";
+    // Clear previous error messages
     passwordError.textContent = "";
     emailError.textContent = "";
 
-    if (!name) {
-        nameError.textContent = "Enter your name";
+    // Input validation
+    if (!email) {
+        emailError.textContent = "Enter a valid email address";
         return;
     }
     if (!password) {
@@ -89,20 +95,20 @@ document.getElementById("loginBtn").addEventListener("click", () => {
         passwordError.textContent = "Password must be at least 5 characters";
         return;
     }
-    if (!email) {
-        emailError.textContent = "Enter a valid email address";
-        return;
-    }
 
+    // Retrieve the list of users from localStorage
     let users = getUsers();
-    let user = users.find(user => user.username === name && user.password === password && user.email === email);
+    let user = users.find(user => user.email === email && user.password === password);
 
+    // Check if user exists
     if (user) {
+        // Store the user as the current logged-in user
         localStorage.setItem("isLoggedIn", "true");
         localStorage.setItem("currentUser", JSON.stringify(user)); // Store current user
-        alert(`Welcome back my gee ${name}!`);
-        window.location.href = "index.html";
+        alert(`Welcome back, ${user.username}!`);
+        window.location.href = "index.html"; // Redirect to the homepage after login
     } else {
-        emailError.textContent = "Invalid username or credentials";
+        // Invalid credentials error
+        emailError.textContent = "Invalid email or credentials";
     }
 });
